@@ -1,0 +1,72 @@
+# ============================================
+# Gradle & Build System
+# ============================================
+.gradle/
+build/
+**/build/
+!gradle/wrapper/gradle-wrapper.jar
+
+# ============================================
+#  Local Configuration
+# ============================================
+local.properties
+
+# ============================================
+# Android Studio & IntelliJ Files
+# ============================================
+.idea/
+*.iml
+.DS_Store
+
+# Exclude specific IDE config files
+/.idea/caches
+/.idea/libraries
+/.idea/modules.xml
+/.idea/workspace.xml
+/.idea/navEditor.xml
+/.idea/assetWizardSettings.xml
+
+# ============================================
+#  Logs & Temporary Files
+# ============================================
+*.log
+*.tmp
+*.temp
+
+# ============================================
+#  Generated Files (Build / Lint / KAPT)
+# ============================================
+captures/
+outputs/
+reports/
+generated/
+
+# ============================================
+#  Keystores & Secrets — NEVER COMMIT
+# ============================================
+*.jks
+*.keystore
+
+# Firebase / Google Services — store securely instead
+google-services.json
+app/google-services.json
+
+# ============================================
+#  Kotlin / Java / Android Build Artifacts
+# ============================================
+*.class
+*.dex
+*.apk
+*.ap_
+*.aab
+
+# ============================================
+#  Native / External Builds
+# ============================================
+.cxx/
+.externalNativeBuild/
+
+# ============================================
+#  Captures & Misc
+# ============================================
+/captures
