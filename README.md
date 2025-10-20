@@ -7,7 +7,7 @@ and out of memory happens when the there is no much heap space available on the 
 
 Directly or indirectly referencing objects can cause memory leaks.
 
-
+![ML_main.png](media/ML_main.png)
 
 ## Implicit Reference (Indirect)
 That occur when an object holds a reference to another object that indirectly causes a memory leak.
