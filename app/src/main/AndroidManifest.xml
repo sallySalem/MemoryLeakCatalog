@@ -12,9 +12,6 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.MemoryLeakCatalog" >
         <activity
-            android:name=".implicit.innerclasses.InnerClassSecondActivity"
-            android:exported="false" />
-        <activity
             android:name=".implicit.innerclasses.InnerClassActivity"
             android:exported="false" />
         <activity
