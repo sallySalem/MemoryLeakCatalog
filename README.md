@@ -25,6 +25,5 @@ In android the most use are Inner class and Anonymous class.
 * [Inner Classes](/doc/InnerClasses.md)
 * [Anonymous classes](/doc/AnonymousClass.md)
 
-
 Under nested classes (Inner or Anonymous) there are multiple cases
 * TODO....
