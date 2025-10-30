@@ -7,7 +7,7 @@ and out of memory happens when the there is no much heap space available on the 
 
 Directly or indirectly referencing objects can cause memory leaks.
 
-![ML_main.png](media/ML_main.png)
+![ml_main_chart.png](media/ml_main_chart.png)
 
 ## Implicit Reference (Indirect)
 That occur when an object holds a reference to another object that indirectly causes a memory leak.
@@ -26,4 +26,4 @@ In android the most use are Inner class and Anonymous class.
 * [Anonymous classes](/doc/AnonymousClass.md)
 
 Under nested classes (Inner or Anonymous) there are multiple cases
-* ....
+* TODO....
