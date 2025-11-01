@@ -10,6 +10,32 @@ class AnonymousActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_anonymous)
 
+        anonymousObject = object : MyAnonymousClass() {
+            override fun doSomething() {
+                this@AnonymousActivity
+            }
+        }
+    }
+
+    companion object {
+        private lateinit var anonymousObject: MyAnonymousClass
+    }
+}
+
+open class MyAnonymousClass {
+    open fun doSomething() {
+    }
+}
+
+/*
+* Fix Memory leak in anonymous class
+*
+*
+* class AnonymousActivity : AppCompatActivity() {
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        setContentView(R.layout.activity_anonymous)
+
         anonymousObject = WeakReference(object : MyAnonymousClass() {
             override fun doSomething() {
                 this@AnonymousActivity
@@ -27,30 +53,4 @@ open class MyAnonymousClass {
     }
 }
 
-
-/*
-* Memory leak in anonymous class
-*
-*
-class AnonymousActivity : AppCompatActivity() {
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_anonymous)
-
-        anonymousObject = object : MyAnonymousClass() {
-            override fun doSomething() {
-                this@AnonymousActivity
-            }
-        }
-    }
-
-    companion object {
-        private lateinit var anonymousObject: MyAnonymousClass
-    }
-}
-
-open class MyAnonymousClass {
-    open fun doSomething() {
-    }
-}
  */
