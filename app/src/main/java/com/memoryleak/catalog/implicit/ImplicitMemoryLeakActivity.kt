@@ -8,6 +8,7 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import com.memoryleak.catalog.R
+import com.memoryleak.catalog.implicit.anonymous.AnonymousActivity
 import com.memoryleak.catalog.implicit.innerclasses.InnerClassActivity
 
 class ImplicitMemoryLeakActivity : AppCompatActivity() {
@@ -17,6 +18,10 @@ class ImplicitMemoryLeakActivity : AppCompatActivity() {
 
         findViewById<Button>(R.id.btn_inner_class).setOnClickListener {
             startActivity(Intent(this, InnerClassActivity::class.java))
+        }
+
+        findViewById<Button>(R.id.btn_anonymous_class).setOnClickListener {
+            startActivity(Intent(this, AnonymousActivity::class.java))
         }
     }
 }
