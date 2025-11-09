@@ -12,6 +12,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.MemoryLeakCatalog">
         <activity
+            android:name=".implicit.handler.HandlerActivity"
+            android:exported="false" />
+        <activity
             android:name=".implicit.anonymous.AnonymousActivity"
             android:exported="false" />
         <activity
