@@ -14,17 +14,18 @@ import java.lang.ref.WeakReference
 class HandlerActivity : AppCompatActivity() {
 
 //    private var innerHandler: Handler = Handler(Looper.getMainLooper())
-//     private val innerHandler: Handler = Handler(Looper.getMainLooper()) { msg: Message ->
-//        println(this@HandlerActivity)
-//        true
-//    }
-
-    private class MyHandler(val activity: WeakReference<HandlerActivity>): Handler(Looper.getMainLooper()) {
-        override fun handleMessage(msg: Message) {
-            super.handleMessage(msg)
-            println(activity.get())
-        }
+     private val innerHandler: Handler = Handler(Looper.getMainLooper()) { msg: Message ->
+        println(this@HandlerActivity)
+        true
     }
+
+//    private class MyHandler(val activity: WeakReference<HandlerActivity>) :
+//        Handler(Looper.getMainLooper()) {
+//        override fun handleMessage(msg: Message) {
+//            super.handleMessage(msg)
+//            println(activity.get())
+//        }
+//    }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -45,18 +46,23 @@ class HandlerActivity : AppCompatActivity() {
 //        }, 50000)
 
 
-
         /*
          * Scheduling Message example for leak and fix
          */
         //Scheduling Message
-//        val message: Message = innerHandler.obtainMessage(1)
-//        innerHandler.sendMessageDelayed(message, 50000)
+        val message: Message = innerHandler.obtainMessage(1)
+        innerHandler.sendMessageDelayed(message, 50000)
 
         //Fix memory leak using static inner class and use weakReference for the object used by handler
-        val activity = WeakReference(this)
-        val myHandler = MyHandler(activity)
-        val message: Message = myHandler.obtainMessage(1)
-        myHandler.sendMessageDelayed(message, 50000)
+//        val activity = WeakReference(this)
+//        val myHandler = MyHandler(activity)
+//        val message: Message = myHandler.obtainMessage(1)
+//        myHandler.sendMessageDelayed(message, 50000)
+    }
+
+    override fun onDestroy() {
+        super.onDestroy()
+//        anonymousHandler.removeCallbacksAndMessages(null)
+        innerHandler.removeCallbacksAndMessages(null)
     }
 }

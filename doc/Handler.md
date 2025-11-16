@@ -78,3 +78,68 @@ _**Bytecode**_
 ```
 **The profile output:**
 ![handler_schedule_ml.png](../media/handler_schedule_ml.png)
+
+### Anonymous Handler
+```kotlin
+    private val anonymousHandler: Handler = object : Handler(Looper.getMainLooper()) {
+        override fun handleMessage(msg: Message) {
+            println(this@HandlerActivity)
+        }
+    }
+```
+
+
+###### Scheduling Runnable
+```kotlin
+    anonymousHandler.postDelayed({ 
+        println(this@HandlerActivity) 
+    }, 50000)
+```
+###### Scheduling Message
+```kotlin
+    val message: Message = anonymousHandler.obtainMessage(1)
+    anonymousHandler.sendMessageDelayed(message, 50000)
+```
+
+The Enqueuing handler also could cause a memory leak
+
+`post(Runnable)`->  If the Runnable has too long task.
+
+`sendEmptyMessage(int)` or `sendMessage(Message)` -> If the queue has too much message and close the activity before complete it.
+
+## Fix Memory leak
+### Remove the Callbacks
+To removes any pending messages and callbacks that are associated with the handler.
+`removeCallbacksAndMessages` doesn't affect the messages that are currently being processed.
+```kotlin
+    override fun onDestroy() {
+        super.onDestroy()
+        innerHandler.removeCallbacksAndMessages(null)
+    }
+```
+### Use static inner class and use WeakReference for the object used by handler
+```kotlin
+ private class MyHandler(val activity: WeakReference<HandlerActivity>): Handler(Looper.getMainLooper()) {
+        override fun handleMessage(msg: Message) {
+            super.handleMessage(msg)
+            println(activity.get())
+        }
+    }
+```
+_Runnable_
+```kotlin
+    val activity = WeakReference(this)
+    MyHandler(activity).postDelayed({
+        println(activity.get())
+    }, 50000)
+
+```
+_Message_
+```kotlin
+    val activity = WeakReference(this)
+    val myHandler = MyHandler(activity)
+    val message: Message = myHandler.obtainMessage(1)
+    myHandler.sendMessageDelayed(message, 50000)
+```
+
+
