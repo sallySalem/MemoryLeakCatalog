@@ -31,4 +31,9 @@ class HandlerActivity : AppCompatActivity() {
         val message: Message = innerHandler.obtainMessage(1)
         innerHandler.sendMessageDelayed(message, 50000)
     }
+
+    override fun onDestroy() {
+        super.onDestroy()
+        innerHandler.removeCallbacksAndMessages(null)
+    }
 }
