@@ -1,9 +1,7 @@
 # Memory leak catalog
 
-Memory leak occurs when an application keeps holding on to memory that is no longer needed
-, causing the device run out of memory.
-The heap is a region of memory in which objects are allocated during the runtime of an Android application.
-and out of memory happens when the there is no much heap space available on the device.
+A memory leak occurs when an application keeps holding on to memory that is no longer needed, causing the device to run out of memory.
+The heap is a region of memory in which objects are allocated during the runtime of an Android application, and an out-of-memory error happens when there is not enough heap space available on the device.
 
 Directly or indirectly referencing objects can cause memory leaks.
 
