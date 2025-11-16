@@ -28,7 +28,7 @@ They are commonly used to quickly implement interfaces, override methods, or def
 ```
 
 ### Memory leak
-A memory leak can occur because an anonymous class, as an inner class, holds an implicit reference to its outer class (in this case, `AnonymousActivity`). If this anonymous object is then stored in a `static` reference (`companion object`), it will live for the entire application lifecycle. This prevents the `Activity` from ever being garbage collected, even after it has been destroyed.
+A memory leak can occur because an anonymous class, as an inner class, holds an implicit reference to its outer class (in this case, `AnonymousActivity`). If this anonymous object is stored in a `static` reference (like in a `companion object`), a strong reference chain is created: `Application Lifecycle -> companion object -> Anonymous Object -> AnonymousActivity`. This reference chain prevents the `Activity` from ever being garbage collected, even after it has been destroyed.
 
 **Example**
 In this example, `anonymousObject` is stored in a `companion object`, making it static. The anonymous object holds a reference to `AnonymousActivity`, causing a memory leak when the activity is destroyed (e.g., on screen rotation).
@@ -68,8 +68,10 @@ In this example, `anonymousObject` is stored in a `companion object`, making it 
 
 
 
-### To fix this Memory leak you need to use WeakReference
-Wrap `MyAnonymousClass` with WeakReference, as anonymous classes don't have explicit names or variable references.
+### Fixing the Leak with `WeakReference`
+To resolve the memory leak, the strong link from the static `companion object` to the `AnonymousActivity` instance must be severed. By wrapping the anonymous object in a `WeakReference`, the `companion object` no longer has a strong reference to it, which allows it to be garbage collected.
+
+When `AnonymousActivity` is destroyed, the anonymous object can be collected by the garbage collector since there are no more strong references to it. Consequently, the implicit reference from the anonymous object to `AnonymousActivity` is also released, allowing the activity to be garbage collected.
 
 ```kotlin
 class AnonymousActivity : AppCompatActivity() {
@@ -77,14 +79,19 @@ class AnonymousActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_anonymous)
 
+        // The anonymous object is wrapped in a WeakReference.
         anonymousObject = WeakReference(object : MyAnonymousClass() {
             override fun doSomething() {
+                // The implicit reference to `AnonymousActivity` still exists,
+                // but it no longer causes a leak because the anonymous object itself
+                // can be garbage collected.
                 this@AnonymousActivity
             }
         })
     }
 
     companion object {
+        // The static field now holds a WeakReference to the object.
         private lateinit var anonymousObject: WeakReference<MyAnonymousClass>
     }
 }
