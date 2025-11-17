@@ -1,5 +1,52 @@
-# Memory leak catalog
+  
+<p align="center">
 
+  <img src="https://img.shields.io/badge/Android-3DDC84?style=for-the-badge&logo=android&logoColor=white" />
+  <img src="https://img.shields.io/badge/Kotlin-7F52FF?style=for-the-badge&logo=kotlin&logoColor=white" />
+
+  <br/>
+
+<!--
+  <img src="https://img.shields.io/github/stars/sallySalem/MemoryLeakCatalog?style=social" />
+  <img src="https://img.shields.io/github/issues/sallySalem/MemoryLeakCatalog" />
+  <img src="https://img.shields.io/github/last-commit/sallySalem/MemoryLeakCatalog" />
+  <img src="https://img.shields.io/badge/License-MIT-yellow.svg" />
+
+  <br/>
+  -->
+  <img src="https://img.shields.io/badge/Memory_Leaks-Catalog-orange" />
+  <img src="https://img.shields.io/badge/Focus-Performance_Optimization-red" />
+  <img src="https://img.shields.io/badge/Contributions-Welcome-4baaaa.svg" />
+
+</p>
+
+  <!-- 
+<p align="center">
+  <img src="https://img.shields.io/badge/Memory_Leaks-Catalog-orange" />
+  <img src="https://img.shields.io/badge/Android-3DDC84?style=for-the-badge&logo=android&logoColor=white" />
+  <img src="https://img.shields.io/badge/Kotlin-7F52FF?style=for-the-badge&logo=kotlin&logoColor=white" />
+  
+  <br/>
+
+  <img src="https://img.shields.io/github/stars/sallySalem/MemoryLeakCatalog?style=social" />
+  <img src="https://img.shields.io/github/issues/sallySalem/MemoryLeakCatalog" />
+  <img src="https://img.shields.io/github/last-commit/sallySalem/MemoryLeakCatalog" />
+  <img src="https://img.shields.io/badge/License-MIT-yellow.svg" />
+
+</p>
+-->
+
+# Memory leak catalog
+MemoryLeakCatalog is a hands-on learning project designed to help Android developers understand, reproduce, and fix memory leaks in Kotlin, Jetpack Compose, and classic Android views.
+
+Use it for:
+ - Improving your Android expertise
+ - Interview preparation
+ - Teaching junior developers
+ - Debugging patterns you see in production apps
+
+
+## Memory leak
 A memory leak occurs when an application keeps holding on to memory that is no longer needed, causing the device to run out of memory.
 The heap is a region of memory in which objects are allocated during the runtime of an Android application, and an out-of-memory error happens when there is not enough heap space available on the device.
 
