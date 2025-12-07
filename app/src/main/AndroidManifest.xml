@@ -12,6 +12,12 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.MemoryLeakCatalog">
         <activity
+            android:name=".implicit.thread.RunnableActivity"
+            android:exported="false" />
+        <activity
+            android:name=".implicit.thread.ThreadActivity"
+            android:exported="false" />
+        <activity
             android:name=".implicit.handler.HandlerActivity"
             android:exported="false" />
         <activity

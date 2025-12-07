@@ -71,10 +71,16 @@ There are four types of nested classes in Java/Kotlin:
 In Android development, **Inner Classes** and **Anonymous Classes** are frequent sources of memory leaks.
 
 #### Common Leak Scenarios with Nested Classes:
-* [Inner Classes](/doc/InnerClasses.md)
-* [Anonymous classes](/doc/AnonymousClass.md)
+* [Inner Classes](/docs/InnerClasses.md)
+* [Anonymous classes](/docs/AnonymousClass.md)
 
 Under nested classes (Inner or Anonymous) there are multiple cases
-* [Handler.md](doc/Handler.md)
+* [Handler.md](docs/Handler.md)
 * Thread [in progress]
 * TODO....
+
+
+## Explicit Reference (Direct)
+An explicit reference occurs when an object directly holds a reference to another object, preventing it from being garbage collected even after its intended lifecycle has ended. While the reference is clearly visible in the code, its potential to cause a memory leak might be overlooked.
+
+This typically happens when a **long-lived object** (like a singleton or a static field) holds a strong reference to a **short-lived object** with a more limited scope (like an Activity, Fragment, View, or Context).

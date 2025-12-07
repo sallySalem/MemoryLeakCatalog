@@ -65,4 +65,31 @@
         app:layout_constraintTop_toBottomOf="@+id/btn_anonymous_class" />
 
 
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/btn_thread"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:background="@drawable/cart_bg"
+        android:text="Thread Example"
+        android:textAllCaps="false"
+        android:textColor="#9e0000"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btn_handler" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/btn_runnable"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="4dp"
+        android:layout_marginHorizontal="30dp"
+        android:background="@drawable/cart_bg"
+        android:text="Runnable Example"
+        android:textAllCaps="false"
+        android:textColor="#9e0000"
+        app:layout_constraintEnd_toEndOf="@+id/btn_thread"
+        app:layout_constraintStart_toStartOf="@+id/btn_thread"
+        app:layout_constraintTop_toBottomOf="@+id/btn_thread" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>
