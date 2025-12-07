@@ -1,0 +1,16 @@
+site_name: Memory Leak Catalog
+site_url: https://sallysalem.github.io/MemoryLeakCatalog
+theme:
+  name: material
+  palette:
+    primary: green
+    accent: light green
+nav:
+  - Home: README.md
+  - Categories:
+      - Inner Classes: InnerClasses.md
+      - AnonymousClass: AnonymousClass.md
+      - Handler: Handler.md
+      - Thread: Thread.md
+repo_name: sallySalem/MemoryLeakCatalog
+repo_url: https://github.com/sallySalem/MemoryLeakCatalog
