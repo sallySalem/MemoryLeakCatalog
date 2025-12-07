@@ -13,15 +13,20 @@ class ThreadActivity : AppCompatActivity() {
 
         setContentView(R.layout.activity_thread)
 
+        // The thread is created as an inner class and started.
+        // It now has an implicit reference to ThreadActivity.
         BackgroundTask().start()
 
     }
 
-    //Memory leak for inner class
-    // Fix by remove inner word
+    // Bad: Inner class holds an implicit reference to ThreadActivity
     private inner class BackgroundTask : Thread() {
         override fun run() {
-            sleep(20000)
+            try {
+                sleep(20000) // Simulate a long-running task
+            } catch (e: InterruptedException) {
+                e.printStackTrace()
+            }
         }
     }
 }
