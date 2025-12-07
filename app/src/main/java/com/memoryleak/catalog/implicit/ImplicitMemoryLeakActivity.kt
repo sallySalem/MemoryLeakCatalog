@@ -11,6 +11,7 @@ import com.memoryleak.catalog.R
 import com.memoryleak.catalog.implicit.anonymous.AnonymousActivity
 import com.memoryleak.catalog.implicit.handler.HandlerActivity
 import com.memoryleak.catalog.implicit.innerclasses.InnerClassActivity
+import com.memoryleak.catalog.implicit.thread.RunnableActivity
 import com.memoryleak.catalog.implicit.thread.ThreadActivity
 
 class ImplicitMemoryLeakActivity : AppCompatActivity() {
@@ -32,6 +33,10 @@ class ImplicitMemoryLeakActivity : AppCompatActivity() {
 
         findViewById<Button>(R.id.btn_thread).setOnClickListener {
             startActivity(Intent(this, ThreadActivity::class.java))
+        }
+
+        findViewById<Button>(R.id.btn_runnable).setOnClickListener {
+            startActivity(Intent(this, RunnableActivity::class.java))
         }
     }
 }
