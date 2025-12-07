@@ -77,7 +77,7 @@ In Android development, **Inner Classes** and **Anonymous Classes** are frequent
 Under nested classes (Inner or Anonymous) there are multiple cases
 * [Handler.md](docs/Handler.md)
 * [Thread](docs/Thread.md)
-* [Runnable](docs/Runnable.md)
+  * [Runnable](docs/Thread.md)
 * TODO....
 
 
