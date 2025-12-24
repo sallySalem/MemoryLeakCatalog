@@ -9,6 +9,7 @@ import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import com.memoryleak.catalog.R
 import com.memoryleak.catalog.implicit.anonymous.AnonymousActivity
+import com.memoryleak.catalog.implicit.asynctask.AsyncTaskActivity
 import com.memoryleak.catalog.implicit.handler.HandlerActivity
 import com.memoryleak.catalog.implicit.innerclasses.InnerClassActivity
 import com.memoryleak.catalog.implicit.thread.RunnableActivity
@@ -37,6 +38,10 @@ class ImplicitMemoryLeakActivity : AppCompatActivity() {
 
         findViewById<Button>(R.id.btn_runnable).setOnClickListener {
             startActivity(Intent(this, RunnableActivity::class.java))
+        }
+
+        findViewById<Button>(R.id.btn_async_task).setOnClickListener {
+            startActivity(Intent(this, AsyncTaskActivity::class.java))
         }
     }
 }

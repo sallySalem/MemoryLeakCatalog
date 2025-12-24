@@ -92,4 +92,18 @@
         app:layout_constraintStart_toStartOf="@+id/btn_thread"
         app:layout_constraintTop_toBottomOf="@+id/btn_thread" />
 
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/btn_async_task"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:background="@drawable/cart_bg"
+        android:text="AsyncTask Example"
+        android:textAllCaps="false"
+        android:textColor="#9e0000"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btn_runnable" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>
