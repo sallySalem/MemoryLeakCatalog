@@ -64,7 +64,7 @@ In this example, `anonymousObject` is stored in a `companion object`, making it 
 * Run the app and rotate the device (which destroys and recreates the Activity).
 * Then check for a memory leak using the Android Studio Profiler.
 
-<img src="../media/anonymous_example.png"  style="border: 1px solid #000;">
+<img src="../media/anonymous_ml.png"  style="border: 1px solid #000;">
 
 
 
