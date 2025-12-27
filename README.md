@@ -87,5 +87,5 @@ An explicit reference occurs when an object directly holds a reference to anothe
 
 This typically happens when a **long-lived object** (like a singleton or a static field) holds a strong reference to a **short-lived object** with a more limited scope (like an Activity, Fragment, View, or Context).
 
-#### Common Leak Scenarios with Explicit References:
+#### Common Leak Scenarios with Static Contexts:
 * [StaticView.md](docs/StaticView.md)
