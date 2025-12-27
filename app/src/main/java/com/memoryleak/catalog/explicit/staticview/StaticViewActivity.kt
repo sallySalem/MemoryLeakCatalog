@@ -35,6 +35,8 @@ class StaticViewActivity : AppCompatActivity() {
         val weakActivity = WeakReference(this)
         val timer = Timer()
 
+        // The long-running TimerTask holds a strong reference to the TextView,
+        // which in turn holds a reference to the Activity, causing a leak.
         // Without rotate the screen just passing the textView directly cause memory leak.
         timer.schedule(MyTimerTask(weakActivity, textView), 1000, 1000)
     }
