@@ -12,6 +12,12 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.MemoryLeakCatalog">
         <activity
+            android:name=".explicit.ExplicitMemoryLeakActivity"
+            android:exported="false" />
+        <activity
+            android:name=".explicit.staticview.StaticViewActivity"
+            android:exported="false" />
+        <activity
             android:name=".implicit.asynctask.AsyncTaskActivity"
             android:exported="false" />
         <activity
