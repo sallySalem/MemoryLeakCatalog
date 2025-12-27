@@ -74,7 +74,7 @@ class MyTimerTask(private val activityReference: WeakReference<StaticViewActivit
 </kbd>
 </p>
 
-_PS: When fix the memory leak in timer it very import to identify the specific cause of the leak in the code. here the textview is the cause of the memory leak._
+_P.S. When fix the memory leak in timer it very import to identify the specific cause of the leak in the code. here the textview is the cause of the memory leak._
 
 ## Fixing the Memory Leak
 
