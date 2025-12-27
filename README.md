@@ -86,3 +86,6 @@ Under nested classes (Inner or Anonymous) there are multiple cases
 An explicit reference occurs when an object directly holds a reference to another object, preventing it from being garbage collected even after its intended lifecycle has ended. While the reference is clearly visible in the code, its potential to cause a memory leak might be overlooked.
 
 This typically happens when a **long-lived object** (like a singleton or a static field) holds a strong reference to a **short-lived object** with a more limited scope (like an Activity, Fragment, View, or Context).
+
+#### Common Leak Scenarios with Static Contexts:
+* [StaticView.md](docs/StaticView.md)
