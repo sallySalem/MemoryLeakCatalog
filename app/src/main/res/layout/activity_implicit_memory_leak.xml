@@ -116,7 +116,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="24dp"
             android:background="@drawable/cart_bg"
-            android:text="Timer Example"
+            android:text="TimerTask Example"
             android:textAllCaps="false"
             android:textColor="#9e0000"
             app:layout_constraintEnd_toEndOf="parent"

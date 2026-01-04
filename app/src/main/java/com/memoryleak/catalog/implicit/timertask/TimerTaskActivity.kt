@@ -1,4 +1,4 @@
-package com.memoryleak.catalog.implicit.timer
+package com.memoryleak.catalog.implicit.timertask
 
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
@@ -6,20 +6,20 @@ import com.memoryleak.catalog.R
 import java.util.Timer
 import java.util.TimerTask
 
-class TimerActivity : AppCompatActivity() {
+class TimerTaskActivity : AppCompatActivity() {
+    private lateinit var timer: Timer
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_timer)
 
-        val timer = Timer()
+
+        timer = Timer()
         timer.schedule(object : TimerTask() {
-            //no need to rotate the device
+            // Even an empty implementation can cause a leak.
+            // The reference exists whether it's used or not.
             override fun run() {
                 runOnUiThread {
                 }
-
-                // OR
-                // println(this@TimerActivity) //no need to rotate the device
             }
         }, 1000, 1000)
     }
