@@ -14,6 +14,7 @@ import com.memoryleak.catalog.implicit.handler.HandlerActivity
 import com.memoryleak.catalog.implicit.innerclasses.InnerClassActivity
 import com.memoryleak.catalog.implicit.thread.RunnableActivity
 import com.memoryleak.catalog.implicit.thread.ThreadActivity
+import com.memoryleak.catalog.implicit.timer.TimerActivity
 
 class ImplicitMemoryLeakActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -42,6 +43,10 @@ class ImplicitMemoryLeakActivity : AppCompatActivity() {
 
         findViewById<Button>(R.id.btn_async_task).setOnClickListener {
             startActivity(Intent(this, AsyncTaskActivity::class.java))
+        }
+
+        findViewById<Button>(R.id.btn_timer).setOnClickListener {
+            startActivity(Intent(this, TimerActivity::class.java))
         }
     }
 }
