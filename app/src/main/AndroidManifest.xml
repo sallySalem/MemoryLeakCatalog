@@ -12,6 +12,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.MemoryLeakCatalog">
         <activity
+            android:name=".implicit.timertask.TimerTaskActivity"
+            android:exported="false" />
+        <activity
             android:name=".explicit.ExplicitMemoryLeakActivity"
             android:exported="false" />
         <activity
