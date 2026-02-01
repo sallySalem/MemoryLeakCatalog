@@ -12,6 +12,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.MemoryLeakCatalog">
         <activity
+            android:name=".implicit.listener.ListenerActivity"
+            android:exported="false" />
+        <activity
             android:name=".explicit.global_singleton.GlobalSingletonActivity"
             android:exported="false" />
         <activity
