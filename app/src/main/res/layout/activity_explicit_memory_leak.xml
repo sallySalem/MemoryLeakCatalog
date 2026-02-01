@@ -33,5 +33,19 @@
         android:textColor="#CF222E"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/txt_title" />
+        app:layout_constraintTop_toBottomOf="@id/txt_title" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/btn_global_singleton"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="40dp"
+        android:layout_marginTop="12dp"
+        android:background="@drawable/cart_red"
+        android:text="Global Singleton"
+        android:textAllCaps="false"
+        android:textColor="#CF222E"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/btn_static_view" />
 </androidx.constraintlayout.widget.ConstraintLayout>
