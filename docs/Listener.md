@@ -95,7 +95,9 @@ class ListenerActivity : AppCompatActivity() {
 1.  Run the app and navigate to the `ListenerActivity`.
 2.  Rotate the device several times to trigger `Activity` destruction and recreation.
 3.  Use the Android Studio Profiler to capture a heap dump.
-4.  Filter for `ListenerActivity` in the profiler. You will see multiple instances of the activity in memory, indicating they were not garbage collected.
+4.  Filter for `ListenerActivity` in the profiler.
+
+
 ![listener_ml.png](../media/listener_ml.png)
 
 ### Fixing the Memory Leak
@@ -110,4 +112,4 @@ The correct place to do this is in `onPause()`, the counterpart to `onResume()`.
         locationManager.removeUpdates(locationListener)
     }
 ```
-By adding this method to your `ListenerActivity`, the `LocationManager` will release its reference to the `locationListener`, allowing both the listener and the `Activity` to be garbage collected properly.
+By adding this method to the `ListenerActivity`, the `LocationManager` will release its reference to the `locationListener`, allowing both the listener and the `Activity` to be garbage collected properly.
