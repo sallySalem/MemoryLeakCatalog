@@ -9,6 +9,7 @@ import com.memoryleak.catalog.implicit.anonymous.AnonymousActivity
 import com.memoryleak.catalog.implicit.asynctask.AsyncTaskActivity
 import com.memoryleak.catalog.implicit.handler.HandlerActivity
 import com.memoryleak.catalog.implicit.innerclasses.InnerClassActivity
+import com.memoryleak.catalog.implicit.listener.ListenerActivity
 import com.memoryleak.catalog.implicit.thread.RunnableActivity
 import com.memoryleak.catalog.implicit.thread.ThreadActivity
 import com.memoryleak.catalog.implicit.timertask.TimerTaskActivity
@@ -44,6 +45,10 @@ class ImplicitMemoryLeakActivity : AppCompatActivity() {
 
         findViewById<Button>(R.id.btn_timer).setOnClickListener {
             startActivity(Intent(this, TimerTaskActivity::class.java))
+        }
+
+        findViewById<Button>(R.id.btn_listener).setOnClickListener {
+            startActivity(Intent(this, ListenerActivity::class.java))
         }
     }
 }

@@ -123,5 +123,18 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/btn_async_task" />
 
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/btn_listener"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="24dp"
+            android:background="@drawable/cart_red"
+            android:text="Listener Example"
+            android:textAllCaps="false"
+            android:textColor="#CF222E"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/btn_timer" />
+
     </androidx.constraintlayout.widget.ConstraintLayout>
 </ScrollView>
