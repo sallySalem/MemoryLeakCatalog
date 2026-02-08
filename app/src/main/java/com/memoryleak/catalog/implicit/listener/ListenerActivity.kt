@@ -23,6 +23,7 @@ class ListenerActivity : AppCompatActivity() {
 
         locationManager = getSystemService(LOCATION_SERVICE) as LocationManager
 
+        // The anonymous LocationListener class holds an implicit reference to ListenerActivity
         locationListener = object : LocationListener {
             override fun onLocationChanged(location: Location) {
                 // Implicit reference to Activity
